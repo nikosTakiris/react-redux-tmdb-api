@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+}
+
+$colors: (
+header-bg-center: #23334c,
+header-bg-corner: #293444,
+light-green: #70ffab,
+just-black: #404040,
+light-black: #606060,
+dark-grey: #909090,
+purple-light: #6404f4,
+title-color: #8a3dff,
+border-grey: #e0e0e0,
+button-details: #c584ff
+);
+
+$borders: (
+fat-border: 0.4rem
+);
+
+@function getVar($properties, $values) {
+  @return map-get($properties, $values);
+}
+
+$sizes: (
+  laptop: 1750px,
+  laptop_mini: 1500px,
+  tablet_mega: 1310px,
+  tablet: 1050px,
+  tablet_mini: 600px,
+  mobile_mega: 400px,
+  mobile: 300px
+);
+
+
+
+@mixin laptop {
+  @media (max-width: #{getVar($sizes, laptop )}) {
+    @content;
+  }
+}
+
+@mixin laptop_mini {
+  @media (max-width: #{getVar($sizes, laptop_mini)}) {
+    @content;
+  }
+}
+
+@mixin tablet_mega {
+  @media (max-width: #{getVar($sizes, tablet_mega)}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{getVar($sizes, tablet)}) {
+    @content;
+  }
+}
+
+@mixin tablet_mini {
+  @media (max-width: #{getVar($sizes, tablet_mini)}) {
+    @content;
+  }
+}
+
+@mixin mobile_mega {
+  @media (max-width: #{getVar($sizes, mobile_mega)}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{getVar($sizes, mobile)}) {
+    @content;
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  cursor:pointer;
+  border: none;
+  outline: none;
+}
+
+.header {
+  width: 100%;
+  background: linear-gradient(to right, getVar($colors, header-bg-corner), getVar($colors, header-bg-center), getVar($colors, header-bg-corner));
+  padding: 25px 0;
+
+  .header-inside {
+    width: 60%;
+    margin:  auto;
+    border-left: getVar($borders, fat-border) solid getVar($colors, purple-light);
+    border-right: getVar($borders, fat-border) solid getVar($colors, purple-light);
+
+    @include laptop {
+      width: 70%;
+    }
+    @include laptop_mini {
+      width: 80%;
+    }
+    .logo {
+
+      height: 100%;
+
+      h1 {
+        color: getVar($colors, title-color);
+        font-weight: 900;
+        text-align: center;
+        font-size: 1.5rem;
+        filter: drop-shadow(1px 2px red);
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+}
+
+.main {
+  width: 60%;
+  margin: auto;
+
+  @include laptop {
+    width: 70%;
+  }
+  @include laptop_mini {
+    width: 80%;
+  }
+}
+
+.search-wrapper {
+  width: 100%;
+
+
+  form {
+    width: 100%;
+
+  input {
+    width: 85%;
+    margin-right: 5%;
+    outline: none;
+    border: none;
+    border-bottom: 0.1rem solid #f7f7f7;
+    padding: 25px 0;
+    color: getVar($colors, dark-grey);
+    font-size: 1rem;
+    background: #fff;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include tablet_mini {
+      width: 100%;
+    }
+
+    @include mobile {
+      font-size: 0.85rem;
+    }
+  }
+    input::placeholder{
+      color:#c9c9c9;
+    }
+    button {
+      width: 10%;
+      padding: 12.5px 0;
+      background: getVar($colors, border-grey);
+      color:#fff;
+      font-weight: 600;
+      transition: 0.8s;
+
+      @include tablet {
+        width: 15%;
+      }
+      @include tablet_mini {
+        display: block;
+        width: 5rem;
+        margin-top: 20px;
+      }
+    }
+
+  }
+}
+.results-name {
+  margin-top: 30px;
+  color: getVar($colors, dark-grey);
+
+  .actual-result-title {
+    font-weight: 900;
+    color: getVar($colors, light-black);
+  }
+}
+.results-wrapper {
+  margin: 25px auto;
+}
+
+.results {
+  width: 45%;
+  float:left;
+  box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, .5);
+  padding: 20px;
+  margin: 2.5% 0;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  box-sizing: border-box;
+  background: linear-gradient(-190deg, #d9d9d9, #fff, #fff, #fff, #d9d9d9);
+
+  @include tablet {
+    width: 100%;
+    float: none;
+    height: 290px;
+    line-height: 290px;
+  }
+
+  @include tablet_mini {
+    height: 430px;
+    margin-bottom: 30px;
+  }
+
+  @include mobile_mega {
+    height: 380px;
+  }
+
+  @include mobile {
+    height: auto;
+    line-height: normal;
+    overflow: auto;
+  }
+
+  .results-pic {
+    width: 65%;
+    float:left;
+    box-sizing: border-box;
+    height: 300px;
+    line-height: 300px;
+
+    @include tablet_mega {
+      height: 250px;
+      line-height: 250px;
+    }
+
+    @include tablet_mini {
+      width: 100%;
+      float:none;
+    }
+
+    @include mobile_mega {
+      height: 200px;
+      line-height: 200px;
+    }
+
+    @include mobile {
+      height: auto;
+      line-height: normal;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    img:hover {
+      opacity: 0.8;
+    }
+    .no-image {
+      color: getVar($colors, dark-grey);
+      font-size: 0.8rem;
+      border: 1px solid getVar($colors, border-grey);
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+  .results-data {
+    width: 30%;
+    margin-left: 5%;
+    float:left;
+    box-sizing: border-box;
+    height: 300px;
+    line-height: 300px;
+
+    @include tablet_mega {
+      height: 250px;
+      line-height: 250px;
+    }
+
+    @include tablet_mini {
+      width: 100%;
+      margin-left: 0;
+      height: 150px;
+      line-height: 150px;
+    }
+
+    @include mobile_mega {
+      height: 150px;
+      line-height: 150px;
+    }
+
+    @include mobile {
+      height: auto;
+      line-height: normal;
+    }
+
+    span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+  }
+
+    h4 {
+      color: getVar($colors, light-black);
+      cursor: pointer;
+
+      @include mobile_mega {
+        font-size: 0.95rem;
+      }
+    }
+    h4:hover {
+      color: getVar($colors, purple-light);
+    }
+    p {
+      margin-top: 5px;
+      color: getVar($colors, dark-grey);
+    }
+
+    .btn-details {
+      color: #fff;
+      background: getVar($colors, button-details);
+      padding: 5px 10px;
+      margin-top: 10px;
+      display:block;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+      font-size: 0.8rem;
+    }
+    .btn-details:hover {
+      background: getVar($colors, purple-light);
+    }
+  }
+}
+.current-wrapper {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+  margin: 30px 0;
+}
+.results-data h1 {
+  margin: 10px 0;
+  color: getVar($colors, just-black);
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include tablet {
+    font-size: 1.5rem;
+  }
+  @include tablet_mini {
+    font-size: 1.3rem;
+  }
+}
+.btn-close {
+  display:block;
+  background: red;
+  margin: 30px 0;
+  font-weight: 900;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 20px;
+  height: 40px;
+}
+.btn-close:hover {
+  background: darkred;
+}
+.current-pic img {
+  width: 100%;
+}
+.overview {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #505050;
+  line-height: 1.4rem;
+  @include tablet {
+    font-size: 0.95rem;
+  }
+}
+.vote-current {
+  margin-left: 20px;
+}
+.vote {
+  margin-top: 10px;
+  display:inline-block;
+  background: getVar($colors, light-black);
+  padding: 5px 10px;
+
+  .actualVote {
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  .toTen {
+    color: getVar($colors, border-grey);
+    font-size: 0.75rem;
+  }
+  .separator {
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
+}
