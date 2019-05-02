@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-redux-tmdb-api/static/css/main.9d323b3e.chunk.css",
+    "main.js": "/react-redux-tmdb-api/static/js/main.2a4ba27a.chunk.js",
+    "main.js.map": "/react-redux-tmdb-api/static/js/main.2a4ba27a.chunk.js.map",
+    "runtime~main.js": "/react-redux-tmdb-api/static/js/runtime~main.848edb69.js",
+    "runtime~main.js.map": "/react-redux-tmdb-api/static/js/runtime~main.848edb69.js.map",
+    "static/js/2.5d7eea98.chunk.js": "/react-redux-tmdb-api/static/js/2.5d7eea98.chunk.js",
+    "static/js/2.5d7eea98.chunk.js.map": "/react-redux-tmdb-api/static/js/2.5d7eea98.chunk.js.map",
+    "index.html": "/react-redux-tmdb-api/index.html",
+    "precache-manifest.e88bd4a585cf6f34470656950947c312.js": "/react-redux-tmdb-api/precache-manifest.e88bd4a585cf6f34470656950947c312.js",
+    "service-worker.js": "/react-redux-tmdb-api/service-worker.js",
+    "static/css/main.9d323b3e.chunk.css.map": "/react-redux-tmdb-api/static/css/main.9d323b3e.chunk.css.map"
+  }
+}
