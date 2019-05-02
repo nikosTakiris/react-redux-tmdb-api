@@ -1,6 +1,7 @@
 {
   "name": "redux-api",
   "version": "0.1.0",
+  "homepage": "https://nikostakiris.github.io/react-redux-tmdb-api/",
   "private": true,
   "dependencies": {
     "node-sass": "^4.12.0",
